@@ -59,7 +59,7 @@ export default async function handler(req, res) {
     serviceKey: normalizeKey(rawKey),   // Decoding 상태로 정리한 인증키다
     returnType: "json",                 // 응답을 JSON 으로 요청한다
     sidoName: sido,                     // 조회할 시도 이름이다
-    numOfRows: "100",                   // 한 번에 최대 100개 측정소를 받는다
+    numOfRows: "700",                   // 전국 측정소(약 673곳)를 한 번에 모두 받는다
     pageNo: "1",                        // 첫 번째 페이지를 요청한다
     ver: "1.3"                          // 초미세먼지(pm25Value)가 포함된 버전이다
   });
