@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 문서 언어를 한국어로 지정한다 -->
+<html lang="ko">
+<head>
+  <!-- 한글이 깨지지 않도록 문자 인코딩을 UTF-8로 설정한다 -->
+  <meta charset="UTF-8" />
+  <!-- 휴대폰에서 화면 폭에 맞게 보이도록 뷰포트를 설정한다 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 브라우저 탭에 표시될 제목이다 -->
+  <title>우리 동네 미세먼지</title>
+  <!-- 외부 스타일시트를 연결한다 -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 전체 내용을 감싸는 컨테이너다 -->
+  <div class="wrap">
+
+    <!-- 상단 머리말 영역이다 -->
+    <header class="header">
+      <!-- 앱 제목이다 -->
+      <h1 class="title">우리 동네 미세먼지</h1>
+      <!-- 시도 선택 드롭다운이다 (옵션은 자바스크립트에서 채운다) -->
+      <select id="sidoSelect" class="sido-select" aria-label="시도 선택"></select>
+    </header>
+
+    <!-- 지역 평균 미세먼지를 크게 보여주는 요약 영역이다 -->
+    <section class="summary" id="summary">
+      <!-- 요약 영역의 작은 설명 글이다 -->
+      <p class="summary-label" id="summaryLabel">지역 평균 미세먼지</p>
+      <!-- 평균 수치를 큰 숫자로 보여준다 -->
+      <p class="summary-value" id="summaryValue">--</p>
+      <!-- 평균 수치의 단위와 등급을 보여준다 -->
+      <p class="summary-unit" id="summaryUnit">㎍/㎥</p>
+    </section>
+
+    <!-- 로딩 중이거나 오류일 때 안내 문구를 보여주는 영역이다 -->
+    <p class="status" id="status">시도를 선택하면 측정소 정보를 불러옵니다.</p>
+
+    <!-- 측정소 카드들이 들어갈 그리드 영역이다 -->
+    <main class="card-grid" id="cardGrid"></main>
+
+    <!-- 하단 출처 표기 영역이다 -->
+    <footer class="footer">
+      <!-- 데이터 출처를 밝힌다 -->
+      <p>자료 출처: 한국환경공단 에어코리아 대기오염정보</p>
+    </footer>
+
+  </div>
+
+  <!-- 자바스크립트 파일을 연결한다 (HTML 파싱 후 실행되도록 defer를 쓴다) -->
+  <script defer src="app.js"></script>
+</body>
+</html>
